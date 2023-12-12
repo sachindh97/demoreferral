@@ -1,0 +1,26 @@
+<header class="mt-5 animate__animated animate__fadeIn">
+    <h1 class="text-white text-center">welcome to</h1>
+    <h2>myaffiliatewebsites.com</h2>
+</header>
+
+<div class="container mt-5 mb-5 animate__animated animate__fadeIn">
+
+    <div class="col-lg-2 mb-5">
+        <select class="form-select" (change)="onChgCategories($event)">
+            <option selected value="All">Select categories</option>
+            <option *ngFor="let i of categoriesList">{{i.name}}</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-12" *ngFor="let item of filterData">
+            <div class="box-content animate__animated animate__fadeIn">
+                <h2>{{item.site_name | titlecase}}</h2>
+                <span class="mt-1"><i class="bi bi-tags"></i> {{item.site_categories | titlecase}} | <i class="bi bi-copy"></i> {{item.type | titlecase}}</span>
+                <p class="mt-2 mb-5">{{item.site_description | titlecase}}</p>
+                <a href="{{item.site_url}}" class="btn btn-md btn-dark">visit site <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>

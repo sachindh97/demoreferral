@@ -1,0 +1,11 @@
+
+header h1 {
+    font-size: 30px;
+}
+
+header h2 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}

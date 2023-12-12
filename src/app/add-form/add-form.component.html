@@ -1,0 +1,73 @@
+<header class="mt-5 animate__animated animate__fadeIn">
+    <h1 class="text-white text-center">welcome to</h1>
+    <h2>myaffiliatewebsites.com</h2>
+</header>
+<h1 class="text-danger">{{errMsg}}</h1>
+<div class="container mt-5 mb-5" *ngIf="loginHide">
+
+    <form class="width:50%" #adminLoginForm="ngForm" (ngSubmit)="adminLoginSubmit(adminLoginForm)">
+        <div class="form-floating mb-3 col-lg-4">
+            <input type="email" class="form-control" id="floatingInputEmail" placeholder="Enter email id" name="email"
+                ngModel>
+            <label for="floatingInputEmail">Enter Email Id</label>
+        </div>
+        <div class="form-floating mb-3 col-lg-4">
+            <input type="password" class="form-control" id="floatingInputPwd" placeholder="Enter Password"
+                name="password" ngModel>
+            <label for="floatingInputPwd">Enter Password</label>
+        </div>
+        <button class="btn btn-md btn-success">Login</button>
+    </form>
+</div>
+
+
+<div class="container mt-5 mb-5" *ngIf="showDetailsForm">
+
+    <form class="width:50%" [formGroup]="addDetailsForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3 col-lg-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter Website Name"
+                formControlName="site_name">
+            <label for="floatingInput">Enter Website Name</label>
+        </div>
+        <!-- <div class="form-floating mb-3 col-lg-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter Website Description"
+                formControlName="siteDescription">
+            <label for="floatingInput">Enter Website Description</label>
+        </div>
+        <div class="form-floating mb-3 col-lg-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter Website Url"
+                formControlName="siteUrl">
+            <label for="floatingInput">Enter Website URL</label>
+        </div>
+        <div class="mb-3 col-lg-4">
+            <select class="form-select col-lg-4" formControlName="siteCategories">
+                <option selected value="All">Select categories</option>
+                <option *ngFor="let i of categoriesList">{{i.name}}</option>
+            </select>
+        </div>
+        <div class="mb-3 col-lg-4">
+            <select class="form-select col-lg-4" formControlName="siteType">
+                <option selecte>Select Type</option>
+                <option value="refer">Refer</option>
+                <option value="affiliate">Affiliate</option>
+
+            </select>
+        </div>
+        <div class="mb-3 col-lg-4">
+            <select class="form-select col-lg-4" formControlName="siteStatus">
+                <option selected>Select Status</option>
+                <option value="1">Enable</option>
+                <option value="0">Disable</option>
+
+            </select>
+        </div>
+        <div class="form-floating mb-3 col-lg-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Enter Secreate Code"
+                formControlName="siteSecreateCode">
+            <label for="floatingInput">Enter Secreate Code</label>
+        </div> -->
+
+        <button class="btn btn-md btn-success">Add Details</button>
+
+    </form>
+</div>
