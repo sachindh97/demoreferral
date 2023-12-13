@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpHeaders} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
@@ -33,10 +33,17 @@ export class AffiliateServicesService {
 
   addSheetData(data:any)
   {
-    const googleSheetAddUrl = "https://script.google.com/macros/s/AKfycbysZodoRkJK1iTKIsVTuvYm4Ge7cLu0BUS7fEZcFLEHqnOezIxkg-nFPIeDTbYPNz1Rbw/exec";
+ 
+ 
+  const headers= new HttpHeaders()
+  .set('content-type', 'application/json')
+  .set('Access-Control-Allow-Origin', '*')
+  .set('Access-Control-Allow-Method', 'POST')
+
+    const googleSheetAddUrl = "https://script.google.com/macros/s/AKfycbz1zWbQ4Y5yJnZqrmvcD5Fv_f6DX-xzjZ85ZsH_XKKAz1SMnOy0jNMqdMtd3amwD3QQ2A/exec?action=add";
     console.log(data,'dar@@');
     
-    return this.http.post(googleSheetAddUrl,data)
+    return this.http.post(googleSheetAddUrl,data,{'headers':headers})
   }
 
 }
