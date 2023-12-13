@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http'
+import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {environment} from '../environments/environments';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,7 @@ export class AffiliateServicesService {
   getSheetData()
   {
 
-    const googleSheetUrl = "https://script.google.com/macros/s/AKfycbzZ_dpTgyi0lUsRnVlNCPu4Ba8r6WimSQXgEc1j1_XZ5ndtKGMv1YZ4X6AA3Om02eH87Q/exec";
+    const googleSheetUrl = environment.googleSheetApi;
     console.log(googleSheetUrl,'googleSheetUrl###');
     return this.http.get(googleSheetUrl);
   }
