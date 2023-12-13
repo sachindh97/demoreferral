@@ -40,7 +40,7 @@ export class AffiliateServicesService {
   .set('Access-Control-Allow-Origin', '*')
   .set('Access-Control-Allow-Method', 'POST')
 
-    const googleSheetAddUrl = "https://script.google.com/macros/s/AKfycbz1zWbQ4Y5yJnZqrmvcD5Fv_f6DX-xzjZ85ZsH_XKKAz1SMnOy0jNMqdMtd3amwD3QQ2A/exec?action=add";
+    const googleSheetAddUrl = "https://docs.google.com/spreadsheets/d/1obZ2TvVYCyxjq2KJOYJpdDsYIU9WpqEfu8FK4_9DBoo/edit?usp=sharing?action=add";
     console.log(data,'dar@@');
     
     return this.http.post(googleSheetAddUrl,data,{'headers':headers})

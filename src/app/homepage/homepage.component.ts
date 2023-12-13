@@ -12,6 +12,8 @@ export class HomepageComponent implements OnInit {
   sheetData: any;
   filterData: any = [];
   categoriesList:any;
+  totalLength:any;
+  page:number =1;
   ngOnInit(): void {
     this.getData();
     this.getCategoriesData();
@@ -435,6 +437,7 @@ export class HomepageComponent implements OnInit {
         status: 1,
       },
     ];
+    this.totalLength = this.sheetData.legnth;
     // });
   }
 

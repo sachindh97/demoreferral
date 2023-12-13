@@ -55,3 +55,7 @@ header h2 {
     }
        
 }
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: rgb(0, 0, 0);
+  }
